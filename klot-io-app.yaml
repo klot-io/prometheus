@@ -1,0 +1,17 @@
+apiVersion: klot.io/v1
+kind: KlotIOApp
+metadata:
+  name: prometheus.klot.io
+spec:
+  namespace: prometheus-klot-io
+  description: Prometheus Server - Kloud of Things I/O
+  manifests:
+  - path: kubernetes/namespace.yaml
+  - path: kubernetes/gui.yaml
+  settings:
+  - name: storage
+    description: Where you want Prometheus to be stored
+    node: enabled
+  url:
+    protocol: http
+    host: www-prometheus-klot-io

@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gui
+  namespace: prometheus-klot-io
+  labels:
+    app: gui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gui
+  template:
+    metadata:
+      labels:
+        app: gui
+    spec:
+      tolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/master
+      nodeSelector:
+        prometheus.klot.io/storage: enabled
+      volumes:
+      - name: prometheus
+        hostPath:
+          path: /home/pi/storage/prometheus.klot.io
+      containers:
+      - name: prometheus
+        image: klotio/prometheus:0.1
+        volumeMounts:
+        - name: prometheus
+          mountPath: /data
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9090
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: www
+  namespace: prometheus-klot-io
+spec:
+  selector:
+    app: gui
+  type: ClusterIP
+  clusterIP: None
+  ports:
+  - name: prometheus
+    port: 9090
+    protocol: TCP
+    targetPort: 9090
