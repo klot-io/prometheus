@@ -43,8 +43,7 @@ metadata:
 spec:
   selector:
     app: gui
-  type: ClusterIP
-  clusterIP: None
+  type: LoadBalancer
   ports:
   - name: http
     port: 80
