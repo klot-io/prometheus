@@ -13,4 +13,4 @@ spec:
     node: enabled
   url:
     protocol: http
-    host: www-prometheus-klot-io
+    host: www-prometheus
