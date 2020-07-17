@@ -30,16 +30,13 @@ push:
 	docker push $(ACCOUNT)/$(IMAGE):$(VERSION)
 
 install:
-	kubectl create -f kubernetes/namespace.yaml
 	kubectl create -f kubernetes/gui.yaml
 
 update:
-	kubectl replace -f kubernetes/namespace.yaml
 	kubectl replace -f kubernetes/gui.yaml
 
 remove:
 	-kubectl delete -f kubernetes/gui.yaml
-	-kubectl delete -f kubernetes/namespace.yaml
 
 reset: remove install
 

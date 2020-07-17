@@ -3,10 +3,9 @@ kind: KlotIOApp
 metadata:
   name: prometheus.klot.io
 spec:
-  namespace: prometheus-klot-io
+  namespace: prometheus
   description: Prometheus Server - Kloud of Things I/O
   manifests:
-  - path: kubernetes/namespace.yaml
   - path: kubernetes/gui.yaml
   settings:
   - name: storage
