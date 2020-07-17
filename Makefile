@@ -1,6 +1,6 @@
 ACCOUNT=klotio
 IMAGE=prometheus
-VERSION?=0.1
+VERSION?=0.2
 NAME=$(IMAGE)-$(ACCOUNT)
 NETWORK=klot.io
 VOLUMES=-v ${PWD}/data:/prometheus

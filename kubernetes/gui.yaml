@@ -26,7 +26,7 @@ spec:
           path: /home/pi/storage/prometheus.klot.io
       containers:
       - name: prometheus
-        image: klotio/prometheus:0.1
+        image: klotio/prometheus:0.2
         volumeMounts:
         - name: prometheus
           mountPath: /data
