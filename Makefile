@@ -2,6 +2,7 @@ ACCOUNT=klotio
 IMAGE=prometheus
 VERSION?=0.2
 NAME=$(IMAGE)-$(ACCOUNT)
+NAMESPACE=prometheus
 NETWORK=klot.io
 VOLUMES=-v ${PWD}/data:/prometheus
 PORT=9090
