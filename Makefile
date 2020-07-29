@@ -4,7 +4,7 @@ VERSION?=0.2
 NAME=$(IMAGE)-$(ACCOUNT)
 NAMESPACE=prometheus
 VOLUMES=-v ${PWD}/data:/prometheus
-TILT_PORT=9090
+TILT_PORT=29090
 
 .PHONY: cross build shell up down push install update remove reset tag untag
 
