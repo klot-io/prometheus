@@ -24,6 +24,7 @@ spec:
       - name: prometheus
         hostPath:
           path: /home/pi/storage/prometheus.klot.io
+          type: Directory
       containers:
       - name: prometheus
         image: klotio/prometheus:0.2
