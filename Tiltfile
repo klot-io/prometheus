@@ -1,5 +1,3 @@
-local('kubectl apply -f tilt/namespace.yaml')
-
 docker_build('prometheus-klot-io', '.')
 
 k8s_yaml(kustomize('.'))
