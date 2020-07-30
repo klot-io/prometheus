@@ -6,8 +6,6 @@ metadata:
 spec:
   template:
     spec:
-      volumes:
-      - name: prometheus
       containers:
       - name: prometheus
         image: prometheus-klot-io
