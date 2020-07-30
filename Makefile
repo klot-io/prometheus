@@ -2,7 +2,6 @@ ACCOUNT=klotio
 IMAGE=prometheus
 VERSION?=0.2
 NAME=$(IMAGE)-$(ACCOUNT)
-NAMESPACE=prometheus
 VOLUMES=-v ${PWD}/data:/prometheus
 TILT_PORT=29090
 
@@ -32,7 +31,6 @@ push:
 	docker push $(ACCOUNT)/$(IMAGE):$(VERSION)
 
 install:
-	-kubectl create ns $(NAMESPACE)
 	kubectl create -f kubernetes/gui.yaml
 
 update:
@@ -40,7 +38,6 @@ update:
 
 remove:
 	-kubectl delete -f kubernetes/gui.yaml
-	-kubectl delete ns $(NAMESPACE)
 
 reset: remove install
 
