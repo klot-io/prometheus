@@ -1,0 +1,6 @@
+apiVersion: klot.io/v1
+kind: KlotIOApp
+metadata:
+  name: prometheus.klot.io
+status: Installed
+url: http://localhost:9090

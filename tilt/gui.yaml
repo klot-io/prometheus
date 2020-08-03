@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gui
+  namespace: prometheus
+spec:
+  template:
+    spec:
+      containers:
+      - name: prometheus
+        image: prometheus-klot-io
+        imagePullPolicy: Never
